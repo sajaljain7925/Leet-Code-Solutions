@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x < 0)
+            return false;
+        long long x1 = x, x2 = 0;
+        while (x > 0) {
+            x2 = x2 * 10 + x % 10;
+            x /= 10;
+        }
+        return x1 == x2;
+    }
+};
