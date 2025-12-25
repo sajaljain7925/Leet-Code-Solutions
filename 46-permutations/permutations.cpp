@@ -1,0 +1,27 @@
+// DFS
+class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        _permute(nums, 0, ans);
+        return ans;
+    }
+
+    void _permute(vector<int>& nums, int ind, vector<vector<int>>& ans) {
+        if (ind == nums.size()) {
+            ans.push_back(nums);
+            return;
+        }
+        for (int i = ind; i < nums.size(); i++) {
+            _swap(nums, ind, i);
+            _permute(nums, ind + 1, ans);
+            _swap(nums, ind, i);
+        }
+    }
+
+    void _swap(vector<int>& nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+};
