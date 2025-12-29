@@ -1,10 +1,9 @@
-// Greedy
 class Solution {
 public:
     int jump(vector<int>& nums) {
-        int ans = 0;  // number of jumps
-        int cur1 = 0;  // maximum jump length (current number of jumps)
-        int cur2 = 0;  // maximum jump length (current point)
+        int ans = 0;
+        int cur1 = 0;
+        int cur2 = 0;  
         for (int i = 0; i < nums.size(); i++) {
             if (cur1 < i) {
                 cur1 = cur2;
