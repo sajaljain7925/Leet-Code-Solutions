@@ -1,0 +1,18 @@
+class Solution {
+public:
+    double myPow(double x, int n) {
+        long long n_long = n;
+        return _pow(x, n);
+    }
+
+    double _pow(double x, long long n) {
+        if (n == 0)
+            return 1;
+        if (n < 0)
+            return 1.0 / _pow(x, -n);
+        if (n % 2 == 0)
+            return _pow(x * x, n / 2);
+        else
+            return _pow(x * x, n / 2) * x;
+    }
+};
